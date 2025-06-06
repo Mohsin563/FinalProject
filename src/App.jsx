@@ -4,12 +4,13 @@ import viteLogo from '/vite.svg'
 
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import ExpensiveForm from './pages/ExpensiveForm'
 function App() {
   
 
   return (
     <>
-      <Signup/>
+      <ExpensiveForm/>
     </>
   )
 }
