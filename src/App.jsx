@@ -5,12 +5,15 @@ import viteLogo from '/vite.svg'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import ExpensiveForm from './pages/ExpensiveForm'
+import ExpensiveDetails from './pages/ExpensiveDetails'
+import ExpenseTable from './pages/ExpensiveTable'
+import Home from './pages/Home'
 function App() {
   
 
   return (
     <>
-      <ExpensiveForm/>
+      <Home/>
     </>
   )
 }

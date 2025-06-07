@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import './ExpensiveForm.css';
 
-
-function ExpenseForm({ addTransaction }) {
+function ExpensiveForm({ addTransaction }) {
 
     const [expenseInfo, setExpenseInfo] = useState({
         amount: '',
@@ -19,7 +19,6 @@ function ExpenseForm({ addTransaction }) {
         e.preventDefault();
         const { amount, text } = expenseInfo;
         if (!amount || !text) {
-           
             return;
         }
         addTransaction(expenseInfo);
@@ -27,16 +26,16 @@ function ExpenseForm({ addTransaction }) {
     }
 
     return (
-        <div className='container'>
-            <h1>Expense Tracker</h1>
-            <form onSubmit={addExpenses}>
+        <div className='expense-form-container'>
+            <h1>Expensive Tracker</h1>
+            <form className="expense-form" onSubmit={addExpenses}>
                 <div>
-                    <label htmlFor='text'>Expense Detail</label>
+                    <label htmlFor='text'>Expensive Detail</label>
                     <input
                         onChange={handleChange}
                         type='text'
                         name='text'
-                        placeholder='Enter your Expense Detail...'
+                        placeholder='Enter your Expensive Detail...'
                         value={expenseInfo.text}
                     />
                 </div>
@@ -56,4 +55,4 @@ function ExpenseForm({ addTransaction }) {
     )
 }
 
-export default ExpenseForm
+export default ExpensiveForm

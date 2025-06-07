@@ -1,0 +1,64 @@
+body {
+  background: #f6f8fa;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.home-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 32px 28px 28px 28px;
+}
+
+.user-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.user-section h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+
+.user-section button {
+  background: #1746fa;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.user-section button:hover {
+  background: #0e2fa0;
+}
+
+/* Example styles for ExpensiveDetails, ExpensiveForm, ExpensiveTable containers */
+.expensive-details,
+.expensive-form,
+.expensive-table {
+  margin-bottom: 28px;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 4px rgba(23,70,250,0.04);
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .home-container {
+    padding: 18px 6px;
+  }
+  .user-section h1 {
+    font-size: 1.1rem;
+  }
+}
