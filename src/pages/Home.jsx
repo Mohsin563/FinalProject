@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import ExpensiveTable from './ExpensiveTable';
 import ExpensiveDetails from './ExpensiveDetails';
 import ExpensiveForm from './ExpensiveForm';
+import ExpensiveBarChart from './ExpensiveBarChart';
 import './Home.css';
 
 function Home() {
@@ -58,6 +59,9 @@ function Home() {
     </div>
     <div className="expensive-table">
       <ExpensiveTable expenses={expenses} deleteExpens={deleteExpens} />
+    </div>
+    <div className="expensive-chart">
+      <ExpensiveBarChart expenses={expenses} />
     </div>
     <ToastContainer />
   </div>
