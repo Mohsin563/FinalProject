@@ -8,12 +8,13 @@ import ExpensiveForm from './pages/ExpensiveForm'
 import ExpensiveDetails from './pages/ExpensiveDetails'
 import ExpenseTable from './pages/ExpensiveTable'
 import Home from './pages/Home'
+import MainHome from './pages/MainHome'
 function App() {
   
 
   return (
     <>
-      <Home/>
+      <MainHome/>
     </>
   )
 }
