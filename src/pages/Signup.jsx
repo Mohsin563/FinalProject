@@ -1,55 +1,55 @@
 import React, { useState } from 'react'
 import { ToastContainer } from 'react-toastify';
 import './Authorization.css';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Signup() {
     const [signupInfo, setSignupInfo] = useState({
         email: '',
-        password: ''
+        password: '',
+        name: ''
     });
     const [showPassword, setShowPassword] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setSignupInfo(prev => ({ ...prev, [name]: value }));
     };
 
+const Navigate = useNavigate();
     const handleShowPassword = () => {
         setShowPassword(prev => !prev);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // handle login logic
+        const { name, email, password } = signupInfo;
+    if (!name.trim() || !email.trim() || !password.trim()) {
+        return handleError('Name, email, and password must not be empty');
+    }
+        setLoading(true);
+        axios.post('http://localhost:3000/signup', signupInfo)
+        .then(result=>{
+            console.log(result);
+            setLoading(false);
+        })
+        .catch(err=>{
+            console.log(err);
+            setLoading(false);
+        }); 
+        Navigate('/login');
     };
 
     return (
         <div className="container">
-            {/* Logo */}
-            <div className="logo">
-                <img src="" alt="Logo" />
-            </div>
-            {/* Heading */}
+           
             <h2 className="heading">Create your account</h2>
             <p className="subheading">
                 to continue to Expense Tracker
             </p>
-            {/* Social Buttons */}
-            <button className="social-btn">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" width={20} />
-                Continue with Facebook
-            </button>
-            <button className="social-btn">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" width={20} />
-                Continue with Google
-            </button>
-            {/* Divider */}
-            <div className="divider">
-                <div className="divider-line" />
-                <span className="divider-text">or</span>
-                <div className="divider-line" />
-            </div>
-            {/* Form */}
+         
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor='email' className="form-label">Email address</label>
@@ -60,6 +60,19 @@ function Signup() {
                         id='email'
                         placeholder='Enter your email...'
                         value={signupInfo.email}
+                        className="form-input"
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor='name' className="form-label">Name</label>
+                    <input
+                        onChange={handleChange}
+                        type='text'
+                        name='name'
+                        id='name'
+                        placeholder='Enter your name...'
+                        value={signupInfo.name}
                         className="form-input"
                         required
                     />
@@ -84,12 +97,16 @@ function Signup() {
                         {showPassword ? '🙈' : '👁️'}
                     </span>
                 </div>
-                <button type='submit' className="sumbit-btn">
-                    CONTINUE
+                <button
+                  type='submit'
+                  className="sumbit-btn"
+                  disabled={!signupInfo.name.trim() || !signupInfo.email.trim() || !signupInfo.password.trim() || loading}
+                >
+                  {loading ? 'Signing up...' : 'Signup'}
                 </button>
                 <div className="footer">
                     Have an account?{' '}
-                    <a href="/signin">
+                    <a href="/login">
                         Sign in
                     </a>
                 </div>

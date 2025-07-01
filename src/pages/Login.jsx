@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { ToastContainer } from 'react-toastify';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './Authorization.css';
 
 function Login() {
@@ -8,49 +10,35 @@ function Login() {
         password: ''
     });
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setLoginInfo(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleShowPassword = () => {
-        setShowPassword(prev => !prev);
-    };
-
-    const handleSubmit = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        // handle login logic
+       axios.post('http://localhost:3000/login', loginInfo)
+       .then(response => {
+            if (response.data.user) {
+                localStorage.setItem('user', JSON.stringify(response.data.user));
+               setTimeout=(navigate('/Dashboard'),1000);
+            } else {
+                alert('Invalid email or password');
+            }
+        }   )
     };
 
     return (
         <div className="container">
-            {/* Logo */}
-            <div className="logo">
-                <img src="" alt="Logo" />
-            </div>
-            {/* Heading */}
             <h2 className="heading">Sign In</h2>
             <p className="subheading">
                 to continue to Expense Tracker
             </p>
-            {/* Social Buttons */}
-            <button className="social-btn">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" alt="Facebook" width={20} />
-                Continue with Facebook
-            </button>
-            <button className="social-btn">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" width={20} />
-                Continue with Google
-            </button>
-            {/* Divider */}
-            <div className="divider">
-                <div className="divider-line" />
-                <span className="divider-text">or</span>
-                <div className="divider-line" />
-            </div>
+
             {/* Form */}
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleLogin}>
                 <div className="form-group">
                     <label htmlFor='email' className="form-label">Email address</label>
                     <input
@@ -77,7 +65,7 @@ function Login() {
                         required
                     />
                     <span
-                        onClick={handleShowPassword}
+                        onClick={() => setShowPassword(s => !s)}
                         className="show-password"
                         title={showPassword ? "Hide password" : "Show password"}
                     >
