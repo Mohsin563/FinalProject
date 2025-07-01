@@ -1,0 +1,66 @@
+.expense-form-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(23,70,250,0.08);
+  padding: 32px 24px 24px 24px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.expense-form-container h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1746fa;
+  letter-spacing: 1px;
+}
+
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.expense-form label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #222;
+  display: block;
+}
+
+.expense-form input[type="text"],
+.expense-form input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 16px;
+  background: #f8fafc;
+  transition: border 0.2s;
+}
+
+.expense-form input[type="text"]:focus,
+.expense-form input[type="number"]:focus {
+  border: 1.5px solid #1746fa;
+  outline: none;
+  background: #fff;
+}
+
+.expense-form button[type="submit"] {
+  background: #1746fa;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+  letter-spacing: 1px;
+}
+
+.expense-form button[type="submit"]:hover {
+  background: #0e2fa0;
+}

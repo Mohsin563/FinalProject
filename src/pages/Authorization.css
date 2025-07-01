@@ -1,0 +1,104 @@
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  padding: 32px;
+}
+.logo {
+  margin-bottom: 24px;
+  text-align: center;
+}
+.logo img {
+  margin-bottom: 8px;
+}
+.heading {
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.subheading {
+  color: #666;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.social-btn {
+  width: 100%;
+  padding: 10px 0;
+  margin-bottom: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.social-btn:last-of-type {
+  margin-bottom: 24px;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+}
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.divider-text {
+  margin: 0 12px;
+  color: #888;
+  font-weight: 500;
+}
+.form-label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+}
+.form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 16px;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group-password {
+  margin-bottom: 24px;
+  position: relative;
+}
+.show-password {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  cursor: pointer;
+  color: #888;
+}
+.sumbit-btn {
+  width: 100%;
+  background: #1746fa;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+.footer {
+  text-align: center;
+  font-size: 15px;
+}
+.footer a {
+  color: #1746fa;
+  font-weight: 500;
+  text-decoration: none;
+}
