@@ -46,34 +46,34 @@ app.post('/login', async (req, res) => {
         });
     });
             
-// app.post('/expenses/:id', async (req, res) => {
-//     const { id } = req.params;
-//     const { text, amount } = req.body;
-//     try {
-//         const updatedExpense = await UserModel.findByIdAndUpdate(id, { text, amount }, { new: true });
-//         if (!updatedExpense) {
-//             return res.status(404).json({ error: 'Expense not found' });
-//         }
-//         res.json(updatedExpense);
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json({ error: 'An error occurred while updating the expense.' });
-//     }
-// });
+app.post('/expenses/:id', async (req, res) => {
+    const { id } = req.params;
+    const { text, amount } = req.body;
+    try {
+        const updatedExpense = await UserModel.findByIdAndUpdate(id, { text, amount }, { new: true });
+        if (!updatedExpense) {
+            return res.status(404).json({ error: 'Expense not found' });
+        }
+        res.json(updatedExpense);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'An error occurred while updating the expense.' });
+    }
+});
 
-// app.post('/expenses/:id/delete', async (req, res) => {
-//     const { id } = req.params;
-//     try {
-//         const deletedExpense = await UserModel.findByIdAndDelete(id);
-//         if (!deletedExpense) {
-//             return res.status(404).json({ error: 'Expense not found' });
-//         }
-//         res.json({ message: 'Expense deleted successfully' });
-//     } catch (error) {
-//         console.error(error);
-//         res.status(500).json({ error: 'An error occurred while deleting the expense.' });
-//     }
-// });
+app.post('/expenses/:id/delete', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const deletedExpense = await UserModel.findByIdAndDelete(id);
+        if (!deletedExpense) {
+            return res.status(404).json({ error: 'Expense not found' });
+        }
+        res.json({ message: 'Expense deleted successfully' });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'An error occurred while deleting the expense.' });
+    }
+});
 
 app.listen(3000,()=>{
     console.log("Server is running on port 3000");
