@@ -1,12 +1,37 @@
-# React + Vite
+# 💸 Expense Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **Expense Tracker** is a full-stack web application that helps users track and visualize their expenses through a dynamic table and interactive bar chart. Users can add, delete, and view their expenses with a clean, responsive interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔧 Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend**: ReactJS, or CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB (local instance)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+---
+
+## 📦 Features
+
+- Add New Expense (title, amount, date)
+- View Expenses in Table
+- Bar Chart Visualization
+- Edit/Delete Expenses
+- Total Expense Summary
+- Responsive Design
+- Local MongoDB Integration
+
+---
+
+---
+
+## 🚀 Installation & Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Mohsin563/FinalProject.git
+cd FinalProject
+
